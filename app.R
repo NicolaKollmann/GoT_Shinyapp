@@ -61,8 +61,22 @@ ui <- fluidPage(theme = shinytheme("darkly"),
 
         # Show a plot of the generated wordcloud
         mainPanel(
-           wordcloud2Output("wordcloud2", width = "100%", height = "900"),
+            
+            tabsetPanel(type = "tabs",
+                        tabPanel("Wordcloud",
+                                 wordcloud2Output("wordcloud2", width = "100%", height = "900")),
+                        tabPanel("Credits",
+                                 br(),
+                                 p("Data:"),
+                                 p("GoT Theme Song:"),
+                                 p("GoT Color Palettes:"),
+                                 p("Wordcloud2"),
+                                 strong("Thank you very much!"),
+                                 hr(),
+                                 tags$iframe(src = "https://giphy.com/gifs/tk8aCAvTg8Hjq/html5", width = "300", height = "229")
+                                 ),
            hr()
+            )
         )
     )
 )
