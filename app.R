@@ -4,12 +4,13 @@
 #
 
 library(shiny)
+library(wordcloud2)
 
-# Define UI for application that draws a histogram
+# Define UI for application that creates a wordcloud
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Game of Thrones Wordcloud"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -28,7 +29,7 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw the wordcloud
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
