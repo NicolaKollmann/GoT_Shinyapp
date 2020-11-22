@@ -62,8 +62,7 @@ ui <- fluidPage(theme = shinytheme("darkly"),
         # Show a plot of the generated wordcloud
         mainPanel(
            wordcloud2Output("wordcloud2", width = "100%", height = "900"),
-           hr(),
-           p("Data: ", style="text-align:right")
+           hr()
         )
     )
 )
