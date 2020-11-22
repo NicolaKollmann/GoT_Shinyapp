@@ -11,6 +11,7 @@ library(tidytext)
 library(gameofthrones)
 library(shinythemes)
 library(colourpicker)
+library(gitlink)
 
 # load the data
 got_scripts <- read_csv("Game_of_Thrones_Script.csv")
@@ -29,10 +30,14 @@ characters <- unique(tidy_got_words$Name)
 characters <- str_to_title(characters) # make the first letters upper case
 characters <- sort(characters) # sort alphabetically
 
+
+
 # Define UI for application that creates a wordcloud
 ui <- fluidPage(theme = shinytheme("darkly"),
     
-                            
+    # add the GitHub ribbon
+    ribbon_css("https://github.com/NicolaKollmann/Shinyapp", color = "#6edfb0"),
+                                        
     # Application title
     titlePanel("Game of Thrones Wordcloud"),
     h4(tags$a(href = "https://nkollmann.netlify.app/", "Nicola Kollmann")),
@@ -69,8 +74,9 @@ ui <- fluidPage(theme = shinytheme("darkly"),
                                  br(),
                                  p("Data: ", a(href="https://www.kaggle.com/albenft/game-of-thrones-script-all-seasons", "Kaggle")),
                                  p("GoT Theme Song: ", a(href="https://mp3offline.org/uXZd_W5B7N0", "mp3offline.org")),
-                                 p("GoT Color Palettes: ", a(href="https://www.kaggle.com/albenft/game-of-thrones-script-all-seasons", "Kaggle")),
+                                 p("GoT Color Palettes: ", a(href="https://github.com/aljrico/gameofthrones", "Alejandro Jiménez")),
                                  p("Wordcloud2: ", a(href="https://github.com/Lchiffon/wordcloud2", "Dawei Lang")),
+                                 p("GitHub Corner: ", a(href="https://github.com/colearendt/gitlink", "Cole Arendt")),
                                  strong("Thank you very much!"),
                                  hr(),
                                  tags$iframe(src = "https://giphy.com/gifs/tk8aCAvTg8Hjq/html5", width = "300", height = "229")
