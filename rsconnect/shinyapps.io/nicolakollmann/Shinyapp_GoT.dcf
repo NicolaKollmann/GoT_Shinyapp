@@ -5,8 +5,8 @@ account: nicolakollmann
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3282090
-bundleId: 3890911
+bundleId: 3891067
 url: https://nicolakollmann.shinyapps.io/Shinyapp_GoT/
-when: 1606051564.93481
+when: 1606056516.27516
 asMultiple: FALSE
 asStatic: FALSE
