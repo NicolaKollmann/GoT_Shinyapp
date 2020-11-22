@@ -31,7 +31,8 @@ characters <- sort(characters) # sort alphabetically
 
 # Define UI for application that creates a wordcloud
 ui <- fluidPage(theme = shinytheme("darkly"),
-
+    
+                            
     # Application title
     titlePanel("Game of Thrones Wordcloud"),
     h4(tags$a(href = "https://nkollmann.netlify.app/", "Nicola Kollmann")),
@@ -52,12 +53,17 @@ ui <- fluidPage(theme = shinytheme("darkly"),
                         choices = c('Targaryen', 'Targaryen2', 'Stark', 'Stark2', 'Lannister', 'Martell', 'Tully', 'Greyjoy', 'Baratheon', 'Baratheon2', 'Tyrell', 'White_Walkers', 'Jon_Snow', 'Margaery', 'Daenerys', 'Game_of_Thrones', 'Wildfire', 'Arya')),
             hr(),
             colourInput("col", "Background color", value = "white"),
+            hr(),
+            
+            # GoT Theme Song
+            tags$audio(src = "GoT_Theme.mp3", type = "audio/mp3", autoplay = T, controls = NA),
         ),
 
         # Show a plot of the generated wordcloud
         mainPanel(
            wordcloud2Output("wordcloud2", width = "100%", height = "900"),
-           hr()
+           hr(),
+           p("Data: ", style="text-align:right")
         )
     )
 )
