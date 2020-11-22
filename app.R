@@ -38,8 +38,11 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             selectInput("character",
-                        "Character:",
-                        choices = characters)
+                        "Choose a Character:",
+                        choices = characters),
+            selectInput("shape",
+                        "Choose the Shape of the Wordcloud:",
+                        choices = c('circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon', 'star'))
         ),
 
         # Show a plot of the generated wordcloud
@@ -65,7 +68,7 @@ server <- function(input, output) {
     output$wordcloud2 <- renderWordcloud2({
         
         # draw the wordcloud for the specified character
-        wordcloud2(wordcloud(), size = 0.7, shape = 'diamond')
+        wordcloud2(wordcloud(), size = 0.7, shape = input$shape)
 
     })
 }
