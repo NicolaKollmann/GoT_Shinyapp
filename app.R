@@ -42,12 +42,15 @@ ui <- fluidPage(
                         choices = characters),
             selectInput("shape",
                         "Choose the Shape of the Wordcloud:",
-                        choices = c('circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon', 'star'))
+                        choices = c('circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon', 'star')),
+            selectInput("pal",
+                        "Choose a Color Palette:",
+                        choices = c('Targaryen', 'Targaryen2', 'Stark', 'Stark2', 'Lannister', 'Martell', 'Tully', 'Greyjoy', 'Baratheon', 'Baratheon2', 'Tyrell', 'White_Walkers', 'Jon_Snow', 'Margaery', 'Daenerys', 'Game_of_Thrones', 'Wildfire', 'Arya')),
         ),
 
         # Show a plot of the generated wordcloud
         mainPanel(
-           wordcloud2Output("wordcloud2")
+           wordcloud2Output("wordcloud2", width = "100%", height = "1000px")
         )
     )
 )
@@ -64,11 +67,18 @@ server <- function(input, output) {
         
         res
     })
+    
+    pal <- reactive({
         
+        res <- got(length(wordcloud()$word), option = input$pal) # create a unique color for each word according to the GoT palette
+        
+        res
+    })
+    
     output$wordcloud2 <- renderWordcloud2({
         
         # draw the wordcloud for the specified character
-        wordcloud2(wordcloud(), size = 0.7, shape = input$shape)
+        wordcloud2(wordcloud(), size = 0.7, shape = input$shape, color = pal())
 
     })
 }
