@@ -1,0 +1,12 @@
+name: Shinyapp_GoT
+title: Shinyapp_GoT
+username:
+account: nicolakollmann
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3282090
+bundleId: 3890911
+url: https://nicolakollmann.shinyapps.io/Shinyapp_GoT/
+when: 1606051564.93481
+asMultiple: FALSE
+asStatic: FALSE
