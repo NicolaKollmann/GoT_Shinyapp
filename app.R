@@ -10,6 +10,7 @@ library(wordcloud2)
 library(tidytext)
 library(gameofthrones)
 library(shinythemes)
+library(colourpicker)
 
 # load the data
 got_scripts <- read_csv("Game_of_Thrones_Script.csv")
@@ -33,6 +34,7 @@ ui <- fluidPage(theme = shinytheme("darkly"),
 
     # Application title
     titlePanel("Game of Thrones Wordcloud"),
+    h4(tags$a(href = "https://nkollmann.netlify.app/", "Nicola Kollmann")),
 
     # Sidebar with a select input for the name of the character
     sidebarLayout(
@@ -40,17 +42,22 @@ ui <- fluidPage(theme = shinytheme("darkly"),
             selectInput("character",
                         "Choose a Character:",
                         choices = characters),
+            hr(),
             selectInput("shape",
                         "Choose the Shape of the Wordcloud:",
                         choices = c('circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon', 'star')),
+            hr(),
             selectInput("pal",
                         "Choose a Color Palette:",
                         choices = c('Targaryen', 'Targaryen2', 'Stark', 'Stark2', 'Lannister', 'Martell', 'Tully', 'Greyjoy', 'Baratheon', 'Baratheon2', 'Tyrell', 'White_Walkers', 'Jon_Snow', 'Margaery', 'Daenerys', 'Game_of_Thrones', 'Wildfire', 'Arya')),
+            hr(),
+            colourInput("col", "Background color", value = "white"),
         ),
 
         # Show a plot of the generated wordcloud
         mainPanel(
-           wordcloud2Output("wordcloud2", width = "100%", height = "1000px")
+           wordcloud2Output("wordcloud2", width = "100%", height = "900"),
+           hr()
         )
     )
 )
@@ -78,7 +85,7 @@ server <- function(input, output) {
     output$wordcloud2 <- renderWordcloud2({
         
         # draw the wordcloud for the specified character
-        wordcloud2(wordcloud(), size = 0.7, shape = input$shape, color = pal())
+        wordcloud2(wordcloud(), size = 0.7, shape = input$shape, color = pal(), backgroundColor = input$col)
 
     })
 }
