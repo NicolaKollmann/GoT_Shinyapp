@@ -5,11 +5,11 @@
 
 library(shiny)
 library(tidyverse)
-library(scales)
 library(readr)
 library(wordcloud2)
 library(tidytext)
 library(gameofthrones)
+library(shinythemes)
 
 # load the data
 got_scripts <- read_csv("Game_of_Thrones_Script.csv")
@@ -29,7 +29,7 @@ characters <- str_to_title(characters) # make the first letters upper case
 characters <- sort(characters) # sort alphabetically
 
 # Define UI for application that creates a wordcloud
-ui <- fluidPage(
+ui <- fluidPage(theme = shinytheme("darkly"),
 
     # Application title
     titlePanel("Game of Thrones Wordcloud"),
