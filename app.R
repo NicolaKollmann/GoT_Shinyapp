@@ -82,6 +82,7 @@ ui <- fluidPage(theme = shinytheme("darkly"),
                                  p(class = "p_Style", "GoT Color Palettes: ", a(href="https://github.com/aljrico/gameofthrones", "Alejandro Jiménez")),
                                  p(class = "p_Style", "Wordcloud2: ", a(href="https://github.com/Lchiffon/wordcloud2", "Dawei Lang")),
                                  p(class = "p_Style", "GitHub Corner: ", a(href="https://github.com/colearendt/gitlink", "Cole Arendt")),
+                                 p(class = "p_Style", "Font: ", a(href="hhttps://fontsgeek.com/fonts/Trajan-Pro-Regular", "Trajan Pro")),
                                  strong(class = "p_Style", "Thank you very much!"),
                                  hr(),
                                  tags$iframe(src = "https://giphy.com/gifs/tk8aCAvTg8Hjq/html5", width = "300", height = "229")
