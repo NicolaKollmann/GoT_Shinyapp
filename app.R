@@ -44,7 +44,7 @@ ui <- fluidPage(theme = shinytheme("darkly"),
     ),
                                         
     # Application title
-    titlePanel(p(class = "p_Style", "Game of Thrones Wordcloud")),
+    titlePanel(p(class = "p_Style", "Game of Thrones Wordcloud"), windowTitle = "Game of Thrones Wordcloud - Nicola Kollmann"),
     h4(p(class = "p_Style", tags$a(href = "https://nkollmann.netlify.app/", "Nicola Kollmann"))),
 
     # Sidebar with a select input for the name of the character
