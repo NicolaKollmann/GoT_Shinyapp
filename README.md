@@ -3,6 +3,8 @@
 
 This repository contains the source code of my first Shiny App. The purpose of the app is to create customized wordclouds for Game of Thrones characters.
 
+![example of the shiny app](example.png)
+
 ## Credits :clap:
 
 Data: [Kaggle](https://www.kaggle.com/albenft/game-of-thrones-script-all-seasons)   
