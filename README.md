@@ -11,3 +11,5 @@ GoT Color Palettes: [Alejandro Jiménez](https://github.com/aljrico/gameofthrone
 Wordcloud2: [Dawei Lang](https://github.com/Lchiffon/wordcloud2)  
 GitHub Corner: [Cole Arendt](https://github.com/colearendt/gitlink)  
 Font: [Trajan Pro](https://fontsgeek.com/fonts/Trajan-Pro-Regular)
+
+![Joffrey clapping](https://media.giphy.com/media/tk8aCAvTg8Hjq/giphy.gif)
